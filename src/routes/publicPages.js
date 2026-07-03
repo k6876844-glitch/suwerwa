@@ -33,6 +33,7 @@ const NAV_ACTIVE = {
   games: 'aboutUs',
   'adm-overview': 'admission',
   criteria: 'admission',
+  terms: 'admission',
   fee: 'admission',
   apply: 'admission',
 };
