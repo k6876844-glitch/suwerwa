@@ -10379,3 +10379,14 @@ header nav .dropdown a:hover {
   color: var(--navy);
   padding-left: 26px;
 }
+
+/* Several duplicate `footer { display:flex; ... }` rules earlier in this file
+   (leftover from per-page stylesheets that got merged into one) put the
+   footer's content and the copyright bar side by side instead of stacked.
+   This wins the cascade by being last, without touching those blocks. */
+footer {
+  display: block;
+}
+.footer-bottom {
+  width: 100%;
+}
