@@ -125,7 +125,7 @@ document.addEventListener('click', e => {
    GLOBAL SEARCH
    ══════════════════════════════════════════════════════════════ */
 const PAGES = [
-  { label:'Home',              icon:'fa-home',            url:'highhome.html' },
+  { label:'Home',              icon:'fa-home',            url:'index.html' },
   { label:'Our Profile',       icon:'fa-school',          url:'profile.html' },
   { label:'History',           icon:'fa-landmark',        url:'history.html' },
   { label:'Vision & Mission',  icon:'fa-eye',             url:'vision.html' },

@@ -10326,7 +10326,7 @@ Page: criteria.html
 /* ── Header nav: dropdown support ─────────────────────────────────────────
    The simple-layout pages embed <ul class="nav-menu"> inside <header><nav>.
    These rules ensure the dropdown looks & behaves exactly like the .navbar
-   dropdowns on highhome.html, and prevent the header from clipping them.
+   dropdowns on index.html, and prevent the header from clipping them.
    ────────────────────────────────────────────────────────────────────── */
 header {
   overflow: visible;            /* let absolutely-positioned dropdowns escape */
