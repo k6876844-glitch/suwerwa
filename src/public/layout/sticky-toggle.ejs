@@ -1,0 +1,8 @@
+<script>
+  (function(){
+    var sh = document.getElementById('stickyHeader');
+    window.addEventListener('scroll', function() {
+      sh.classList.toggle('visible', window.scrollY > 200);
+    });
+  })();
+</script>

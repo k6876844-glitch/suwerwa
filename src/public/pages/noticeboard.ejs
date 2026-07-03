@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>School Notice Board  Moi High School Kabarak</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel='stylesheet' href='/high.css'/>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/></head>
+<body>
+
+
+<%- include('../layout/header-simple', { navActive: 'aboutUs' }) %>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">MHSK</a> <span>/</span> Information <span>/</span> School Notice Board</div>
+    <h2>School <em>Notice Board</em></h2>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Official announcements, term dates, fee reminders, and important administrative information.</p>
+  </div>
+</section>
+<div class="motto-strip">
+  <span class="star"></span>
+  <p>Stay Informed  Stay Ahead</p>
+  <span class="star"></span>
+</div>
+<div class="main-wrap">
+  <main class="content">
+<p>The MHSK Notice Board is the primary channel for official announcements affecting students, parents, and staff. From term dates and fee reminders to school events and important administrative notices  check here regularly to stay informed.</p>
+
+<h2 class="section-heading">Current Notices</h2>
+<div class="notice-list"><div class="notice-item pinned">
+  <div class="notice-date-block"><div class="day">04</div><div class="month">Dec</div><div class="year">2025</div></div>
+  <div class="notice-body"><span class="notice-tag">Notice</span><span class="pinned-icon"></span><h3 style="margin-top:.5rem">Moi Senior School  Kabarak</h3><p>Our mission is to provide holistic educational services in a learner-centred, co-educational Christian environment, guided by commitment, fairness, and integrity.</p></div>
+  <a class="notice-cta" href="#">Read more </a>
+</div><div class="notice-item">
+  <div class="notice-date-block"><div class="day">04</div><div class="month">Jun</div><div class="year">2025</div></div>
+  <div class="notice-body"><span class="notice-tag">Calendar</span><h3 style="margin-top:.5rem">2025 Term Dates Released</h3><p>The 2025 academic year opens on 6th January 2025 and runs through to 4th April 2025 for Term One. Full term calendar attached.</p></div>
+  <a class="notice-cta" href="#">Read more </a>
+</div><div class="notice-item">
+  <div class="notice-date-block"><div class="day">15</div><div class="month">Mar</div><div class="year">2026</div></div>
+  <div class="notice-body"><span class="notice-tag">Event</span><h3 style="margin-top:.5rem">19th Annual Prize-Giving Ceremony</h3><p>Parents and guardians are invited to the upcoming Annual Thanksgiving and Prize-Giving Ceremony. Details to follow via class teachers.</p></div>
+  <a class="notice-cta" href="#">Read more </a>
+</div><div class="notice-item">
+  <div class="notice-date-block"><div class="day">10</div><div class="month">Jan</div><div class="year">2026</div></div>
+  <div class="notice-body"><span class="notice-tag">Finance</span><h3 style="margin-top:.5rem">Fee Payment Reminder  Term 1</h3><p>All parents are reminded to clear Term 1 fees before reporting day. Payment via bank slip or M-Pesa Paybill as detailed in the fee structure.</p></div>
+  <a class="notice-cta" href="#">Read more </a>
+</div><div class="notice-item">
+  <div class="notice-date-block"><div class="day">06</div><div class="month">Jan</div><div class="year">2026</div></div>
+  <div class="notice-body"><span class="notice-tag">Reporting</span><h3 style="margin-top:.5rem">School Opening Day  Term 1, 2026</h3><p>Form 2, 3 and 4 students report on 6th January 2026. Form 1 reporting and orientation will be communicated separately.</p></div>
+  <a class="notice-cta" href="#">Read more </a>
+</div></div>
+
+<div class="term-dates-banner">
+  <div>
+    <h3> Looking for Term Dates?</h3>
+    <p>View the full school calendar for the academic year, including opening dates, half-term breaks, and closing days.</p>
+  </div>
+  <a href="highterms.html" target="_blank">View Term Dates</a>
+</div>
+</main>
+  <aside class="sidebar">
+<div class="sidebar-card">
+  <div class="sidebar-card-header"><h4>Information Desk</h4></div>
+  <div class="sidebar-card-body"><a class="sidebar-link" href="Snews.html">News and Events <span class="arrow"></span></a><a class="sidebar-link active" href="noticeboard.html">School Notice Board <span class="arrow"></span></a><a class="sidebar-link" href="games".html">Games &amp; Sports <span class="arrow"></span></a><a class="sidebar-link" href="clubs".html">Clubs &amp; Societies <span class="arrow"></span></a><a class="sidebar-link" href="leadership.html">Student Leadership <span class="arrow"></span></a><a class="sidebar-link" href="facilities.html">Facilities &amp; Amenities <span class="arrow"></span></a></div>
+</div>
+<div class="apply-cta">
+  <h4>Applications Open</h4>
+  <p>Join one of Kenya's most prestigious schools. Applications are now being accepted.</p>
+  <a class="apply-btn" href="https://www.mhskabarak.sc.ke/application" target="_blank">How to Apply </a>
+</div>
+</aside>
+</div>
+
+
+<%- include('../layout/footer') %>
+<%- include('../layout/sticky-toggle') %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <a href="tel:+254725777449"> +254 725 777 449</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="mailto:info@mhskabarak.sc.ke"> info@mhskabarak.sc.ke</a>
+  </div>
+  <div class="topbar-socials">
+   <a href="https://www.facebook.com/mhskabarak" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/mhskabarak" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/mhskabarak" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@moihighshoolkabarak" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <div class="logo-badge">M</div>
+    <div class="logo-text">
+      <h1>Moi High School Kabarak</h1>
+      <p>MHSK &nbsp;&nbsp; Nakuru County, Kenya</p>
+    </div>
+  </div>
+  <nav>
+    <ul class="nav-menu" style="padding:0;margin:0">
+      <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
+      <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_SIMPLE, active: navActive === 'aboutUs' }) %>
+      <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS, active: navActive === 'admission' }) %>
+      <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
+      <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <div class="logo-placeholder">MK</div>
+    <span>MHS Kabarak</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="/index.html">Home</a></li>
+    <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_SIMPLE }) %>
+    <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS }) %>
+    <li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+</div>

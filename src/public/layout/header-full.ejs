@@ -1,0 +1,103 @@
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="contact-info">
+    <span><i class="fas fa-phone"></i> +254 725 777 449</span>
+    <span><i class="fas fa-envelope"></i> info@sfgsuwerwa.sc.ke</span>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header class="main-header">
+  <div class="logo">
+    <div class="logo-placeholder">SFG</div>
+    <div class="logo-text">
+    <h2><b>ST FRANCIS GIRLS</b></h2>
+      <subtitle><b>SUWERWA-KITALE</b></subtitle>
+    </div>
+  </div>
+  <div class="flex-center">
+    <a href="tel:+254725777449" class="header-phone-link">
+      <i class="fas fa-phone icon-gold-margin"></i>+254 725 777 449
+    </a>
+    <div class="icons">
+      <i class="fas fa-search" id="searchBtn"></i>
+    </div>
+    <!-- HAMBURGER  opens mobile drawer -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- SEARCH BOX -->
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Search here...">
+  <button>Search</button>
+</div>
+
+<!-- DESKTOP NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <ul class="nav-menu" id="desktopNav">
+
+      <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
+
+      <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_FULL, active: navActive === 'aboutUs' }) %>
+      <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS, active: navActive === 'admission' }) %>
+
+      <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
+      <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact Us</a></li>
+
+    </ul>
+    <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+  </div>
+</nav>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <div class="logo-placeholder">SFG</div>
+    <span>SFG SUWERWA</span>
+  </div>
+  <ul class="nav-menu">
+    <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
+    <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_FULL, active: navActive === 'aboutUs' }) %>
+    <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS, active: navActive === 'admission' }) %>
+    <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
+    <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+</div>
+
+<!-- MOBILE OVERLAY (dark backdrop) -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>SFG SUWERWA</span>
+    <button class="mobile-close" id="mobileClose">&times;</button>
+  </div>
+  <ul>
+    <li><a href="/index.html"> Home</a></li>
+
+    <li><a href="#"> About Us</a></li>
+    <% nav.ABOUT_US_FULL.forEach(function(item) { %>
+    <li><a href="<%= item.href %>" class="mobile-sub"><%- item.label %></a></li>
+    <% }); %>
+
+    <li><a href="#"> Admission</a></li>
+    <% nav.ADMISSION_ITEMS.forEach(function(item) { %>
+    <li><a href="<%= item.href %>" class="mobile-sub"><%- item.label %></a></li>
+    <% }); %>
+
+    <li><a href="/gallery.html"> Gallery</a></li>
+    <li><a href="/contact.html"> Contact Us</a></li>
+  </ul>
+</nav>

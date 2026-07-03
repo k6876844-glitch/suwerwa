@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – St Francis Girls Suwerwa</title>
+  <link rel="stylesheet" href="/high.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<%- include('../layout/header-full', { navActive: 'contact' }) %>
+
+<!-- PAGE HERO BANNER -->
+<section class="page-hero contact-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">We'd Love to Hear From You</p>
+    <h1>Contact Us</h1>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="/index.html">Home</a>
+      <span><i class="fas fa-chevron-right"></i></span>
+      <span>Contact Us</span>
+    </nav>
+  </div>
+</section>
+
+<!-- CONTACT INTRO STRIP -->
+<div class="contact-intro-strip">
+  <div class="contact-intro-inner">
+    <div class="contact-intro-text">
+      <p class="section-label">Get in Touch</p>
+      <h2>Get in Touch or Leave Us a Message</h2>
+      <p>St Francis Girls Secondary School is located in Suwerwa, Trans Nzoia County, approximately 8 km from Kitale Town. Whether you have enquiries about admissions, general questions, suggestions or special requests, our dedicated team is always ready to help.</p>
+    </div>
+    <div class="contact-quick-links">
+      <a href="#contact-form" class="cqi-btn"><i class="fas fa-paper-plane"></i> Send a Message</a>
+      <a href="apply.html" class="cqi-btn cqi-outline"><i class="fas fa-file-alt"></i> Apply Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT INFO CARDS -->
+<div class="contact-cards-wrap">
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <h3>Physical Address</h3>
+    <p>The Principal<br>St Francis Girls Secondary School<br>P.O. Box 1234 – 30200<br>Suwerwa, Trans Nzoia<br>KENYA</p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+    <h3>Phone Numbers</h3>
+    <p>General Inquiry:<br>
+      <a href="tel:+254725777449">+254 725 777 449</a>
+    </p>
+    <p>Administration:<br>
+      <a href="tel:+254700000000">+254 700 000 000</a>
+    </p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+    <h3>Email Addresses</h3>
+    <ul class="contact-email-list">
+      <li><span>General:</span> <a href="mailto:info@sfgsuwerwa.sc.ke">info@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Principal:</span> <a href="mailto:principal@sfgsuwerwa.sc.ke">principal@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Admissions:</span> <a href="mailto:admissions@sfgsuwerwa.sc.ke">admissions@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Finance:</span> <a href="mailto:finance@sfgsuwerwa.sc.ke">finance@sfgsuwerwa.sc.ke</a></li>
+    </ul>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
+    <h3>Office Hours</h3>
+    <ul class="contact-hours-list">
+      <li><span>Monday – Friday</span><span>7:30 AM – 5:00 PM</span></li>
+      <li><span>Saturday</span><span>8:00 AM – 1:00 PM</span></li>
+      <li><span>Sunday &amp; Public Holidays</span><span>Closed</span></li>
+    </ul>
+    <p class="contact-hours-note"><i class="fas fa-info-circle"></i> Visiting hours for parents: Sat 9 AM – 12 PM</p>
+  </div>
+
+</div>
+
+<!-- FORM + MAP SECTION -->
+<section class="contact-main-section">
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form-wrap" id="contact-form">
+    <div class="contact-form-header">
+      <p class="section-label">Send Us a Message</p>
+      <h2>We'll Get Back to You Shortly</h2>
+      <p>Fill in the form below and a member of our team will respond within one working day.</p>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Full Name <span class="req">*</span></label>
+          <input type="text" id="cf-name" name="name" placeholder="e.g. Jane Wanjiku" required>
+          <span class="form-error" id="err-name"></span>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="cf-email" name="email" placeholder="e.g. jane@email.com" required>
+          <span class="form-error" id="err-email"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-phone">Phone Number</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="e.g. +254 7XX XXX XXX">
+        </div>
+        <div class="form-group">
+          <label for="cf-subject">Subject <span class="req">*</span></label>
+          <select id="cf-subject" name="subject" required>
+            <option value="" disabled selected>— Select a subject —</option>
+            <option value="admissions">Admissions Enquiry</option>
+            <option value="fees">Fees &amp; Finance</option>
+            <option value="academics">Academic Information</option>
+            <option value="visit">School Visit / Tour</option>
+            <option value="general">General Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="form-error" id="err-subject"></span>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="cf-message">Your Message <span class="req">*</span></label>
+        <textarea id="cf-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        <span class="form-error" id="err-message"></span>
+        <span class="char-count" id="charCount">0 / 1000</span>
+      </div>
+
+      <div class="form-group full-width">
+        <label class="checkbox-label">
+          <input type="checkbox" id="cf-agree" name="agree" required>
+          <span class="checkmark"></span>
+          <span>I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>, and I consent to St Francis Girls Secondary School processing my information to respond to this enquiry.</span>
+        </label>
+        <span class="form-error" id="err-agree"></span>
+      </div>
+
+      <button type="submit" class="contact-submit-btn" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+
+      <!-- Success / Error feedback -->
+      <div class="form-feedback success" id="formSuccess">
+        <i class="fas fa-check-circle"></i>
+        <strong>Message sent successfully!</strong> Thank you for reaching out. We'll get back to you within one working day.
+      </div>
+      <div class="form-feedback error" id="formError">
+        <i class="fas fa-exclamation-triangle"></i>
+        <strong>Please fix the errors above</strong> and try again.
+      </div>
+    </form>
+  </div>
+
+  <!-- MAP + EXTRA INFO -->
+  <div class="contact-map-wrap">
+    <div class="contact-map-header">
+      <p class="section-label">Find Us</p>
+      <h2>Our Location</h2>
+      <p>St Francis Girls Secondary School – Suwerwa, Trans Nzoia County, Kenya</p>
+    </div>
+
+    <!-- Embedded Google Map (Kitale, Trans Nzoia) -->
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15957.21!2d35.0062!3d1.0154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17823ae6e5ce3f5b%3A0x16b35c3ac8b7b5f4!2sKitale%2C+Trans+Nzoia%2C+Kenya!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+        width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="School Location Map">
+      </iframe>
+    </div>
+
+    <!-- Directions Card -->
+    <div class="directions-card">
+      <h4><i class="fas fa-route"></i> How to Find Us</h4>
+      <ul>
+        <li><i class="fas fa-car"></i> <strong>From Kitale Town:</strong> Take Suwerwa Road heading north, approximately 8 km from Kitale Town centre.</li>
+        <li><i class="fas fa-bus"></i> <strong>By Matatu:</strong> Board Kitale–Suwerwa matatus from Kitale main stage. Alight at Suwerwa junction.</li>
+        <li><i class="fas fa-walking"></i> <strong>On Foot:</strong> A 5-minute walk from Suwerwa junction following the school signboards.</li>
+      </ul>
+    </div>
+
+    <!-- Social Connect -->
+    <div class="contact-social-card">
+      <h4>Connect With Us</h4>
+      <p>Follow us on social media for latest news, events and school updates.</p>
+      <div class="contact-social-links">
+        <a href="" target="_blank" class="cs-link cs-fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+        <a href="" target="_blank" class="cs-link cs-tw"><i class="fab fa-x-twitter"></i><span>Twitter / X</span></a>
+        <a href="" target="_blank" class="cs-link cs-ig"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="" target="_blank" class="cs-link cs-yt"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%- include('../layout/footer') %>
+<%- include('../layout/search-overlay') %>
+</body>
+</html>

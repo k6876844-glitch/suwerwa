@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Login — St Francis Girls Suwerwa</title>
+  <link rel="stylesheet" href="/admin/static/login.css">
+</head>
+<body>
+  <div class="login-card">
+    <div class="login-badge">SFG</div>
+    <h1>Admin Login</h1>
+    <p class="subtitle">St Francis Girls Suwerwa — restricted access</p>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="login-error"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/admin/login">
+      <input type="hidden" name="redirect" value="<%= typeof redirect !== 'undefined' && redirect ? redirect : '' %>">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required autofocus>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+    <a href="/index.html" class="login-back">&larr; Back to the website</a>
+  </div>
+</body>
+</html>
