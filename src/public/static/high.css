@@ -47,9 +47,10 @@ img {
   font-size: 13px;
   padding: 6px 40px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px 12px;
 }
 .top-bar .social-icons a {
   color: #aab8d4;
@@ -135,6 +136,14 @@ img {
   background: var(--navy);
   margin: 5px 0;
   transition: .3s;
+}
+/* Sticky header has a navy background, so its hamburger needs light bars;
+   it only replaces the sticky nav-menu once that's hidden on mobile. */
+.sticky-hamburger {
+  display: none;
+}
+.sticky-hamburger span {
+  background: var(--white);
 }
 /* Search icon in header */
 .header-actions {
@@ -1330,6 +1339,12 @@ footer {
   }
   .sticky-nav {
     display: none;
+  }
+  .sticky-header {
+    padding: 10px 20px;
+  }
+  .sticky-hamburger {
+    display: block;
   }
 
 }
