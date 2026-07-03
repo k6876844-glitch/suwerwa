@@ -13,6 +13,7 @@ const noIndex = require('./src/middleware/noIndex');
 const requireAuth = require('./src/middleware/requireAuth');
 const requireRole = require('./src/middleware/requireRole');
 const { seedAdminUser } = require('./src/auth/userStore');
+const { ensureDataFiles } = require('./src/shared/jsonStore');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -44,6 +45,7 @@ app.use((req, res) => {
   res.status(404).send('Not Found');
 });
 
+ensureDataFiles();
 seedAdminUser().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
