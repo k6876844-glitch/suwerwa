@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – St Francis Girls Suwerwa</title>
+  <link rel="stylesheet" href="high.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="contact-info">
+    <span><i class="fas fa-phone"></i> +254 725 777 449</span>
+    <span><i class="fas fa-envelope"></i> info@sfgsuwerwa.sc.ke</span>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header class="main-header">
+  <div class="logo">
+    <div class="logo-placeholder">SFG</div>
+    <div class="logo-text">
+      <h2><b>ST FRANCIS GIRLS</b></h2>
+      <subtitle><b>SUWERWA-KITALE</b></subtitle>
+    </div>
+  </div>
+  <div class="flex-center">
+    <a href="tel:+254725777449" class="header-phone-link">
+      <i class="fas fa-phone icon-gold-margin"></i>+254 725 777 449
+    </a>
+    <div class="icons">
+      <i class="fas fa-search" id="searchBtn"></i>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- SEARCH BOX -->
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Search here...">
+  <button>Search</button>
+</div>
+
+<!-- DESKTOP NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <ul class="nav-menu" id="desktopNav">
+      <li><a href="highhome.html">Home</a></li>
+      <li>
+        <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+        <ul class="dropdown">
+          <li><a href="profile.html">Our Profile</a></li>
+          <li><a href="history.html">Our History</a></li>
+          <li><a href="vision.html">Vision, Mission &amp; Values</a></li>
+          <li><a href="administration.html">School Administration</a></li>
+          <li><a href="policies.html">School Policies</a></li>
+          <li><a href="anthem.html">School Anthem</a></li>
+          <li><a href="news.html">News &amp; Events</a></li>
+          <li><a href="noticeboard.html">Notice Board</a></li>
+          <li><a href="games.html">Games &amp; Sports</a></li>
+          <li><a href="clubs.html">Clubs &amp; Societies</a></li>
+          <li><a href="alumni.html">Notable Alumni</a></li>
+          <li><a href="kcse.html">KCSE Results</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+        <ul class="dropdown">
+          <li><a href="adm-overview.html">Overview</a></li>
+          <li><a href="criteria.html">Admission Criteria</a></li>
+          <li><a href="fee.html">Fee Payment</a></li>
+          <li><a href="apply.html">How to Apply</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li class="active"><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+  </div>
+</nav>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <div class="logo-placeholder">SFG</div>
+    <span>SFG SUWERWA</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html">Our Profile</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="vision.html">Vision, Mission &amp; Values</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html">Overview</a></li>
+        <li><a href="apply.html">How to Apply</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li class="active"><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>SFG SUWERWA</span>
+    <button class="mobile-close" id="mobileClose">&times;</button>
+  </div>
+  <ul>
+    <li><a href="highhome.html">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="profile.html" class="mobile-sub">Our Profile</a></li>
+    <li><a href="history.html" class="mobile-sub">Our History</a></li>
+    <li><a href="vision.html" class="mobile-sub">Vision, Mission &amp; Values</a></li>
+    <li><a href="administration.html" class="mobile-sub">School Administration</a></li>
+    <li><a href="policies.html" class="mobile-sub">School Policies</a></li>
+    <li><a href="anthem.html" class="mobile-sub">School Anthem</a></li>
+    <li><a href="news.html" class="mobile-sub">News &amp; Events</a></li>
+    <li><a href="noticeboard.html" class="mobile-sub">Notice Board</a></li>
+    <li><a href="games.html" class="mobile-sub">Games &amp; Sports</a></li>
+    <li><a href="clubs.html" class="mobile-sub">Clubs &amp; Societies</a></li>
+    <li><a href="alumni.html" class="mobile-sub">Notable Alumni</a></li>
+    <li><a href="kcse.html" class="mobile-sub">KCSE Results</a></li>
+    <li><a href="#">Admission</a></li>
+    <li><a href="adm-overview.html" class="mobile-sub">Overview</a></li>
+    <li><a href="criteria.html" class="mobile-sub">Admission Criteria</a></li>
+    <li><a href="fee.html" class="mobile-sub">Fee Payment</a></li>
+    <li><a href="apply.html" class="mobile-sub">How to Apply</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO BANNER -->
+<section class="page-hero contact-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">We'd Love to Hear From You</p>
+    <h1>Contact Us</h1>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="highhome.html">Home</a>
+      <span><i class="fas fa-chevron-right"></i></span>
+      <span>Contact Us</span>
+    </nav>
+  </div>
+</section>
+
+<!-- CONTACT INTRO STRIP -->
+<div class="contact-intro-strip">
+  <div class="contact-intro-inner">
+    <div class="contact-intro-text">
+      <p class="section-label">Get in Touch</p>
+      <h2>Get in Touch or Leave Us a Message</h2>
+      <p>St Francis Girls Secondary School is located in Suwerwa, Trans Nzoia County, approximately 8 km from Kitale Town. Whether you have enquiries about admissions, general questions, suggestions or special requests, our dedicated team is always ready to help.</p>
+    </div>
+    <div class="contact-quick-links">
+      <a href="#contact-form" class="cqi-btn"><i class="fas fa-paper-plane"></i> Send a Message</a>
+      <a href="apply.html" class="cqi-btn cqi-outline"><i class="fas fa-file-alt"></i> Apply Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT INFO CARDS -->
+<div class="contact-cards-wrap">
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <h3>Physical Address</h3>
+    <p>The Principal<br>St Francis Girls Secondary School<br>P.O. Box 1234 – 30200<br>Suwerwa, Trans Nzoia<br>KENYA</p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+    <h3>Phone Numbers</h3>
+    <p>General Inquiry:<br>
+      <a href="tel:+254725777449">+254 725 777 449</a>
+    </p>
+    <p>Administration:<br>
+      <a href="tel:+254700000000">+254 700 000 000</a>
+    </p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+    <h3>Email Addresses</h3>
+    <ul class="contact-email-list">
+      <li><span>General:</span> <a href="mailto:info@sfgsuwerwa.sc.ke">info@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Principal:</span> <a href="mailto:principal@sfgsuwerwa.sc.ke">principal@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Admissions:</span> <a href="mailto:admissions@sfgsuwerwa.sc.ke">admissions@sfgsuwerwa.sc.ke</a></li>
+      <li><span>Finance:</span> <a href="mailto:finance@sfgsuwerwa.sc.ke">finance@sfgsuwerwa.sc.ke</a></li>
+    </ul>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
+    <h3>Office Hours</h3>
+    <ul class="contact-hours-list">
+      <li><span>Monday – Friday</span><span>7:30 AM – 5:00 PM</span></li>
+      <li><span>Saturday</span><span>8:00 AM – 1:00 PM</span></li>
+      <li><span>Sunday &amp; Public Holidays</span><span>Closed</span></li>
+    </ul>
+    <p class="contact-hours-note"><i class="fas fa-info-circle"></i> Visiting hours for parents: Sat 9 AM – 12 PM</p>
+  </div>
+
+</div>
+
+<!-- FORM + MAP SECTION -->
+<section class="contact-main-section">
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form-wrap" id="contact-form">
+    <div class="contact-form-header">
+      <p class="section-label">Send Us a Message</p>
+      <h2>We'll Get Back to You Shortly</h2>
+      <p>Fill in the form below and a member of our team will respond within one working day.</p>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Full Name <span class="req">*</span></label>
+          <input type="text" id="cf-name" name="name" placeholder="e.g. Jane Wanjiku" required>
+          <span class="form-error" id="err-name"></span>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="cf-email" name="email" placeholder="e.g. jane@email.com" required>
+          <span class="form-error" id="err-email"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-phone">Phone Number</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="e.g. +254 7XX XXX XXX">
+        </div>
+        <div class="form-group">
+          <label for="cf-subject">Subject <span class="req">*</span></label>
+          <select id="cf-subject" name="subject" required>
+            <option value="" disabled selected>— Select a subject —</option>
+            <option value="admissions">Admissions Enquiry</option>
+            <option value="fees">Fees &amp; Finance</option>
+            <option value="academics">Academic Information</option>
+            <option value="visit">School Visit / Tour</option>
+            <option value="general">General Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="form-error" id="err-subject"></span>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="cf-message">Your Message <span class="req">*</span></label>
+        <textarea id="cf-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        <span class="form-error" id="err-message"></span>
+        <span class="char-count" id="charCount">0 / 1000</span>
+      </div>
+
+      <div class="form-group full-width">
+        <label class="checkbox-label">
+          <input type="checkbox" id="cf-agree" name="agree" required>
+          <span class="checkmark"></span>
+          <span>I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>, and I consent to St Francis Girls Secondary School processing my information to respond to this enquiry.</span>
+        </label>
+        <span class="form-error" id="err-agree"></span>
+      </div>
+
+      <button type="submit" class="contact-submit-btn" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+
+      <!-- Success / Error feedback -->
+      <div class="form-feedback success" id="formSuccess">
+        <i class="fas fa-check-circle"></i>
+        <strong>Message sent successfully!</strong> Thank you for reaching out. We'll get back to you within one working day.
+      </div>
+      <div class="form-feedback error" id="formError">
+        <i class="fas fa-exclamation-triangle"></i>
+        <strong>Please fix the errors above</strong> and try again.
+      </div>
+    </form>
+  </div>
+
+  <!-- MAP + EXTRA INFO -->
+  <div class="contact-map-wrap">
+    <div class="contact-map-header">
+      <p class="section-label">Find Us</p>
+      <h2>Our Location</h2>
+      <p>St Francis Girls Secondary School – Suwerwa, Trans Nzoia County, Kenya</p>
+    </div>
+
+    <!-- Embedded Google Map (Kitale, Trans Nzoia) -->
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15957.21!2d35.0062!3d1.0154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17823ae6e5ce3f5b%3A0x16b35c3ac8b7b5f4!2sKitale%2C+Trans+Nzoia%2C+Kenya!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+        width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="School Location Map">
+      </iframe>
+    </div>
+
+    <!-- Directions Card -->
+    <div class="directions-card">
+      <h4><i class="fas fa-route"></i> How to Find Us</h4>
+      <ul>
+        <li><i class="fas fa-car"></i> <strong>From Kitale Town:</strong> Take Suwerwa Road heading north, approximately 8 km from Kitale Town centre.</li>
+        <li><i class="fas fa-bus"></i> <strong>By Matatu:</strong> Board Kitale–Suwerwa matatus from Kitale main stage. Alight at Suwerwa junction.</li>
+        <li><i class="fas fa-walking"></i> <strong>On Foot:</strong> A 5-minute walk from Suwerwa junction following the school signboards.</li>
+      </ul>
+    </div>
+
+    <!-- Social Connect -->
+    <div class="contact-social-card">
+      <h4>Connect With Us</h4>
+      <p>Follow us on social media for latest news, events and school updates.</p>
+      <div class="contact-social-links">
+        <a href="" target="_blank" class="cs-link cs-fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+        <a href="" target="_blank" class="cs-link cs-tw"><i class="fab fa-x-twitter"></i><span>Twitter / X</span></a>
+        <a href="" target="_blank" class="cs-link cs-ig"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="" target="_blank" class="cs-link cs-yt"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-flex">
+        <div class="logo-placeholder footer-logo-custom">SFG</div>
+        <div>
+          <div class="footer-title-text">ST FRANCIS GIRLS</div>
+          <div class="footer-name-text">SUWERWA</div>
+        </div>
+      </div>
+      <p>A private secondary school providing holistic Christian-based quality education for the service of God and mankind. On Earth We Rise!</p>
+      <div class="footer-social">
+        <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>About SFG</h4>
+      <ul>
+        <li><a href="profile.html">Our Profile</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="vision.html">Mission, Vision &amp; Values</a></li>
+        <li><a href="administration.html">School Administration</a></li>
+        <li><a href="policies.html">School Policies</a></li>
+        <li><a href="anthem.html">School Anthem</a></li>
+        <li><a href="alumni.html">Notable Alumni</a></li>
+        <li><a href="kcse.html">KCSE Results</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visitors</h4>
+      <ul>
+        <li><a href="adm-overview.html">Admission Overview</a></li>
+        <li><a href="criteria.html">Admission Criteria</a></li>
+        <li><a href="fee.html">Fee Payment</a></li>
+        <li><a href="apply.html">How To Apply</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+        <li><a href="noticeboard.html">Notice Board</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Suwerwa, Trans Nzoia County, Kenya</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+254725777449" class="footer-link-color">+254 725 777 449</a></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@sfgsuwerwa.sc.ke" class="footer-link-color">info@sfgsuwerwa.sc.ke</a></div>
+      <div class="footer-divider-top">
+        <a href="apply.html" class="btn-gold btn-apply-footer">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 St Francis Girls Secondary School &ndash; Suwerwa. All Rights Reserved. |
+    <a href="highhome.html">sfgsuwerwa.sc.ke</a>
+  </div>
+</footer>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-inner">
+    <button class="search-close" id="searchClose">&times;</button>
+    <h3>Search SFG Suwerwa</h3>
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="Search the website..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+</div>
+
+<script src="high.js"></script>
+</body>
+</html>

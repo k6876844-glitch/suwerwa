@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – St Francis Girls Suwerwa</title>
+  <link rel="stylesheet" href="high.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="contact-info">
+    <span><i class="fas fa-phone"></i> +254 725 777 449</span>
+    <span><i class="fas fa-envelope"></i> info@sfgsuwerwa.sc.ke</span>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header class="main-header">
+  <div class="logo">
+    <div class="logo-placeholder">SFG</div>
+    <div class="logo-text">
+      <h2><b>ST FRANCIS GIRLS</b></h2>
+      <subtitle><b>SUWERWA-KITALE</b></subtitle>
+    </div>
+  </div>
+  <div class="flex-center">
+    <a href="tel:+254725777449" class="header-phone-link">
+      <i class="fas fa-phone icon-gold-margin"></i>+254 725 777 449
+    </a>
+    <div class="icons">
+      <i class="fas fa-search" id="searchBtn"></i>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- SEARCH BOX -->
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Search here...">
+  <button>Search</button>
+</div>
+
+<!-- DESKTOP NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <ul class="nav-menu" id="desktopNav">
+      <li><a href="highhome.html">Home</a></li>
+      <li>
+        <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+        <ul class="dropdown">
+          <li><a href="profile.html">Our Profile</a></li>
+          <li><a href="history.html">Our History</a></li>
+          <li><a href="vision.html">Vision, Mission &amp; Values</a></li>
+          <li><a href="administration.html">School Administration</a></li>
+          <li><a href="policies.html">School Policies</a></li>
+          <li><a href="anthem.html">School Anthem</a></li>
+          <li><a href="news.html">News &amp; Events</a></li>
+          <li><a href="noticeboard.html">Notice Board</a></li>
+          <li><a href="games.html">Games &amp; Sports</a></li>
+          <li><a href="clubs.html">Clubs &amp; Societies</a></li>
+          <li><a href="alumni.html">Notable Alumni</a></li>
+          <li><a href="kcse.html">KCSE Results</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+        <ul class="dropdown">
+          <li><a href="adm-overview.html">Overview</a></li>
+          <li><a href="criteria.html">Admission Criteria</a></li>
+          <li><a href="fee.html">Fee Payment</a></li>
+          <li><a href="apply.html">How to Apply</a></li>
+        </ul>
+      </li>
+      <li class="active"><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+  </div>
+</nav>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <div class="logo-placeholder">SFG</div>
+    <span>SFG SUWERWA</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html">Our Profile</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="vision.html">Vision, Mission &amp; Values</a></li>
+        <li><a href="administration.html">School Administration</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html">Overview</a></li>
+        <li><a href="criteria.html">Admission Criteria</a></li>
+        <li><a href="fee.html">Fee Payment</a></li>
+        <li><a href="apply.html">How to Apply</a></li>
+      </ul>
+    </li>
+    <li class="active"><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>SFG SUWERWA</span>
+    <button class="mobile-close" id="mobileClose">&times;</button>
+  </div>
+  <ul>
+    <li><a href="highhome.html">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="profile.html" class="mobile-sub">Our Profile</a></li>
+    <li><a href="history.html" class="mobile-sub">Our History</a></li>
+    <li><a href="vision.html" class="mobile-sub">Vision, Mission &amp; Values</a></li>
+    <li><a href="administration.html" class="mobile-sub">School Administration</a></li>
+    <li><a href="policies.html" class="mobile-sub">School Policies</a></li>
+    <li><a href="anthem.html" class="mobile-sub">School Anthem</a></li>
+    <li><a href="news.html" class="mobile-sub">News &amp; Events</a></li>
+    <li><a href="noticeboard.html" class="mobile-sub">Notice Board</a></li>
+    <li><a href="games.html" class="mobile-sub">Games &amp; Sports</a></li>
+    <li><a href="clubs.html" class="mobile-sub">Clubs &amp; Societies</a></li>
+    <li><a href="alumni.html" class="mobile-sub">Notable Alumni</a></li>
+    <li><a href="kcse.html" class="mobile-sub">KCSE Results</a></li>
+    <li><a href="#">Admission</a></li>
+    <li><a href="adm-overview.html" class="mobile-sub">Overview</a></li>
+    <li><a href="criteria.html" class="mobile-sub">Admission Criteria</a></li>
+    <li><a href="fee.html" class="mobile-sub">Fee Payment</a></li>
+    <li><a href="apply.html" class="mobile-sub">How to Apply</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO BANNER -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">St Francis Girls Secondary School</p>
+    <h1>Our Gallery</h1>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="highhome.html">Home</a>
+      <span><i class="fas fa-chevron-right"></i></span>
+      <span>Gallery</span>
+    </nav>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <p class="section-label">Visual Stories</p>
+    <h2>Explore Our School</h2>
+    <p class="gallery-subtitle">A glimpse into life at St Francis Girls — academics, sports, culture, and community.</p>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="academics">Academics</button>
+    <button class="filter-btn" data-filter="sports">Sports &amp; Games</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="campus">Campus</button>
+    <button class="filter-btn" data-filter="scouts">Scouts &amp; Clubs</button>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <div class="gallery-grid" id="galleryGrid">
+
+    <!-- Academics -->
+    <div class="gallery-item" data-category="academics" data-caption="Students engaged in classroom learning">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="Classroom Learning" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Classroom Learning</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="academics" data-caption="Biology laboratory session">
+      <img src="https://images.unsplash.com/photo-1532094349884-543559244dee?w=600&q=80" alt="Biology Laboratory" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Biology Laboratory</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="academics" data-caption="Library and reading sessions">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Library Session" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Library Session</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="academics" data-caption="Computer lab and ICT lessons">
+      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="ICT Lab" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>ICT Lab</span>
+      </div>
+    </div>
+
+    <!-- Sports -->
+    <div class="gallery-item" data-category="sports" data-caption="Athletics and field events">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Athletics" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Athletics</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="sports" data-caption="Netball tournament 2024">
+      <img src="https://images.unsplash.com/photo-1546519638405-a9f9c4e4cddb?w=600&q=80" alt="Netball Tournament" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Netball Tournament</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="sports" data-caption="Inter-school football competition">
+      <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=600&q=80" alt="Football Competition" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Football Competition</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="sports" data-caption="Swimming gala event">
+      <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=80" alt="Swimming Gala" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Swimming Gala</span>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div class="gallery-item" data-category="events" data-caption="Annual Prize Giving Day ceremony">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="Prize Giving Day" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Prize Giving Day</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="events" data-caption="School parade and march past">
+      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="School Parade" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>School Parade</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="events" data-caption="Cultural and music festival">
+      <img src="https://images.unsplash.com/photo-1522158637959-30385a09e0da?w=600&q=80" alt="Cultural Festival" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Cultural Festival</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="events" data-caption="Graduation and KCSE celebration">
+      <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80" alt="Graduation" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Graduation Day</span>
+      </div>
+    </div>
+
+    <!-- Campus -->
+    <div class="gallery-item" data-category="campus" data-caption="Main school building and entrance">
+      <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" alt="School Building" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>School Building</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="campus" data-caption="School chapel and prayer grounds">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="School Chapel" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>School Chapel</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="campus" data-caption="Dormitories and boarding facilities">
+      <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Boarding Facilities" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Boarding Facilities</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="campus" data-caption="Sports fields and recreation area">
+      <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=600&q=80" alt="Sports Fields" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Sports Fields</span>
+      </div>
+    </div>
+
+    <!-- Scouts & Clubs -->
+    <div class="gallery-item" data-category="scouts" data-caption="Kenya Girl Guides activities">
+      <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" alt="Girl Guides" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Girl Guides</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="scouts" data-caption="Drama club performance">
+      <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80" alt="Drama Club" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Drama Club</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="scouts" data-caption="Debate and public speaking club">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80" alt="Debate Club" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Debate Club</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="scouts" data-caption="Environmental and conservation club">
+      <img src="https://images.unsplash.com/photo-1542601906897-d4be9c57ef56?w=600&q=80" alt="Environmental Club" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Environmental Club</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="academics" data-caption="Chemistry practical experiment">
+      <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600&q=80" alt="Chemistry Lab" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Chemistry Lab</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="events" data-caption="Sports day opening ceremony">
+      <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80" alt="Sports Day" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Sports Day</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="campus" data-caption="School garden and agriculture">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="School Garden" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>School Garden</span>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="sports" data-caption="Basketball practice session">
+      <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=600&q=80" alt="Basketball" loading="lazy">
+      <div class="gallery-overlay">
+        <i class="fas fa-search-plus"></i>
+        <span>Basketball</span>
+      </div>
+    </div>
+
+  </div><!-- /.gallery-grid -->
+
+  <div class="gallery-no-results" id="galleryNoResults" style="display:none;">
+    <i class="fas fa-images"></i>
+    <p>No photos in this category yet.</p>
+  </div>
+
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-inner">
+    <img src="" alt="" id="lightboxImg">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-flex">
+        <div class="logo-placeholder footer-logo-custom">SFG</div>
+        <div>
+          <div class="footer-title-text">ST FRANCIS GIRLS</div>
+          <div class="footer-name-text">SUWERWA</div>
+        </div>
+      </div>
+      <p>A private secondary school providing holistic Christian-based quality education for the service of God and mankind. On Earth We Rise!</p>
+      <div class="footer-social">
+        <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>About SFG</h4>
+      <ul>
+        <li><a href="profile.html">Our Profile</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="vision.html">Mission, Vision &amp; Values</a></li>
+        <li><a href="administration.html">School Administration</a></li>
+        <li><a href="policies.html">School Policies</a></li>
+        <li><a href="anthem.html">School Anthem</a></li>
+        <li><a href="alumni.html">Notable Alumni</a></li>
+        <li><a href="kcse.html">KCSE Results</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visitors</h4>
+      <ul>
+        <li><a href="adm-overview.html">Admission Overview</a></li>
+        <li><a href="criteria.html">Admission Criteria</a></li>
+        <li><a href="fee.html">Fee Payment</a></li>
+        <li><a href="apply.html">How To Apply</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+        <li><a href="noticeboard.html">Notice Board</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Suwerwa, Trans Nzoia County, Kenya</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+254725777449" class="footer-link-color">+254 725 777 449</a></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@sfgsuwerwa.sc.ke" class="footer-link-color">info@sfgsuwerwa.sc.ke</a></div>
+      <div class="footer-divider-top">
+        <a href="apply.html" class="btn-gold btn-apply-footer">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 St Francis Girls Secondary School &ndash; Suwerwa. All Rights Reserved. |
+    <a href="highhome.html">sfgsuwerwa.sc.ke</a>
+  </div>
+</footer>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-inner">
+    <button class="search-close" id="searchClose">&times;</button>
+    <h3>Search SFG Suwerwa</h3>
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="Search the website..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+</div>
+
+<script src="high.js"></script>
+</body>
+</html>
