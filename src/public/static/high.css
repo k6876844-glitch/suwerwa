@@ -68,6 +68,14 @@ img {
   margin-right: 5px;
   color: var(--gold);
 }
+.top-bar .contact-info a.top-bar-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+}
+.top-bar .contact-info a.top-bar-link:hover {
+  color: var(--gold);
+}
 /*  MAIN HEADER  */
 .main-header {
   background: var(--white);
