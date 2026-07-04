@@ -3,10 +3,12 @@
 const path = require('path');
 const express = require('express');
 const { buildPageWhitelist } = require('../shared/pageWhitelist');
+const searchIndex = require('../shared/searchIndex');
 
 const router = express.Router();
 const pagesDir = path.join(__dirname, '..', 'public', 'pages');
 const whitelist = buildPageWhitelist(pagesDir);
+const searchEntries = searchIndex.buildIndex(pagesDir);
 
 // Per-page "active" nav item, used by the header partials to highlight the
 // current section. Anything not listed here simply renders with no active item.
@@ -45,7 +47,14 @@ router.get('/', (req, res) => {
 router.get(/^\/([a-z0-9-]+)\.html$/i, (req, res, next) => {
   const slug = req.params[0].toLowerCase();
   if (!whitelist.has(slug)) return next();
-  res.render(`public/pages/${slug}`, { navActive: NAV_ACTIVE[slug] || null });
+
+  const locals = { navActive: NAV_ACTIVE[slug] || null };
+  if (slug === 'search-results') {
+    const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
+    locals.query = query;
+    locals.results = query ? searchIndex.search(searchEntries, query) : [];
+  }
+  res.render(`public/pages/${slug}`, locals);
 });
 
 module.exports = router;
