@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parent Zone  St Francis Girls Suwerwa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel='stylesheet' href='/high.css'/>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/></head>
+<body>
+
+<!-- TOP BAR -->
+
+<%- include('../layout/header-simple', { navActive: 'aboutUs' }) %>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">SFGS</a>
+      <span>/</span> Parent Zone
+    </div>
+    <h2>Parent <em>Zone</em></h2>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">
+      A dedicated space for parents and guardians to stay connected with their daughter's academic
+      progress, fee statements, and school communication.
+    </p>
+  </div>
+  <div class="hero-side">
+    <div class="big-text">SFG<br>S</div>
+  </div>
+</section>
+
+<!-- MOTTO STRIP -->
+<div class="motto-strip">
+  <span class="star"></span>
+  <p>Partnering With Parents for Every Student's Success</p>
+  <span class="star"></span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+
+  <!--  CONTENT  -->
+  <main class="content">
+    <p>
+      The Parent Zone gives parents and guardians a single place to keep up with their daughter's
+      journey at St Francis Girls Suwerwa  from academic performance to fee statements and school
+      announcements. It is designed to keep the home and the school working together.
+    </p>
+
+    <!-- Zeraki Analytics -->
+    <div class="section-block">
+      <h3>Zeraki Analytics Parent Portal</h3>
+      <p>
+        St Francis Girls Suwerwa uses <strong>Zeraki Analytics</strong>, a school management platform
+        used widely across Kenyan secondary schools, to give parents real-time access to exam results,
+        performance trends, fee statements, and attendance  without needing to visit the school in person.
+      </p>
+
+      <div class="zeraki-embed-wrap">
+        <!-- PLACEHOLDER: swap src for the school's real Zeraki Analytics parent-portal URL -->
+        <iframe
+          class="zeraki-iframe"
+          src="about:blank#REPLACE_WITH_ZERAKI_PARENT_PORTAL_URL"
+          title="Zeraki Analytics Parent Portal"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+        </iframe>
+      </div>
+
+      <div class="zeraki-notice">
+        <i class="fas fa-circle-info"></i>
+        <p>
+          This is a placeholder embed  the <code>src</code> above needs to be swapped for the school's
+          real Zeraki Analytics parent-portal URL before this goes live. Once set, if the portal doesn't
+          load inside this page (some login portals block embedding), use the button below so parents can
+          still open it directly.
+        </p>
+      </div>
+
+      <a class="apply-btn" href="#REPLACE_WITH_ZERAKI_PARENT_PORTAL_URL" target="_blank" rel="noopener">
+        Open Zeraki Portal <i class="fas fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- What you can do -->
+    <div class="section-block">
+      <h3>What You Can Do in the Parent Zone</h3>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon"></div>
+          <h4>Track Performance</h4>
+          <p>View exam results and performance trends as soon as they are released.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"></div>
+          <h4>Check Fee Statements</h4>
+          <p>See fee balances and payment history at a glance.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"></div>
+          <h4>Stay Informed</h4>
+          <p>Receive school announcements, attendance updates, and important notices.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <table style="display:none;"><tr><td></td></tr></table> <!-- for sticky sidebar spacing -->
+
+  <!--  SIDEBAR  -->
+  <aside class="sidebar">
+
+    <!-- Quick Facts -->
+    <div class="facts-widget">
+      <h4>Quick Facts</h4>
+      <div class="fact-row">
+        <span class="fact-label">Platform</span>
+        <span class="fact-value">Zeraki Analytics</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Access</span>
+        <span class="fact-value">Results, Fees, Attendance</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Support</span>
+        <span class="fact-value">info@sfgsuwerwa.sc.ke</span>
+      </div>
+    </div>
+
+    <!-- About SFGS links -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <h4>About SFG Suwerwa</h4>
+      </div>
+      <div class="sidebar-card-body">
+        <a class="sidebar-link" href="profile.html">Our Profile <span class="arrow"></span></a>
+        <a class="sidebar-link" href="history.html">Our History <span class="arrow"></span></a>
+        <a class="sidebar-link" href="vision.html">Mission, Vision &amp; Values <span class="arrow"></span></a>
+        <a class="sidebar-link" href="administration.html">School Administration <span class="arrow"></span></a>
+        <a class="sidebar-link" href="policies.html">School Policies <span class="arrow"></span></a>
+        <a class="sidebar-link" href="kcse.html">KCSE Results <span class="arrow"></span></a>
+      </div>
+    </div>
+
+    <!-- Visitors links -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <h4>Visitors</h4>
+      </div>
+      <div class="sidebar-card-body">
+        <a class="sidebar-link" href="https://www.sfgsuwerwa.sc.ke/fee">Fee Payment <span class="arrow"></span></a>
+        <a class="sidebar-link" href="https://www.sfgsuwerwa.sc.ke/kcse">KCSE Results <span class="arrow"></span></a>
+        <a class="sidebar-link active" href="https://www.sfgsuwerwa.sc.ke/parentzone">Parent Zone <span class="arrow"></span></a>
+      </div>
+    </div>
+
+    <!-- Apply CTA -->
+    <div class="apply-cta">
+      <h4>Applications Open</h4>
+      <p>Join one of Kenya's most prestigious schools. Applications for the next intake are now being accepted.</p>
+      <a class="apply-btn" href="https://www.sfgsuwerwa.sc.ke/application" target="_blank">How to Apply </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+
+<%- include('../layout/footer') %>
+<%- include('../layout/sticky-toggle') %>
+</body>
+</html>
