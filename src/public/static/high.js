@@ -164,52 +164,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
-    const searchBtn = document.getElementById('searchBtn');
-    const searchBox = document.getElementById('searchBox');
-    const searchInput = document.querySelector('#searchBox input');
-    const searchSubmitBtn = document.querySelector('#searchBox button');
+    const searchBtn     = document.getElementById('searchBtn');
+    const searchBox     = document.getElementById('searchBox');
+    const searchInput   = document.getElementById('searchBoxInput');
+    const searchBoxBtn  = document.getElementById('searchBoxBtn');
+    const searchResults = document.getElementById('searchBoxResults');
+    if (!searchBtn || !searchBox || !searchInput) return;
 
     // Toggle search box visibility when clicking search icon
     searchBtn.addEventListener('click', function() {
         searchBox.classList.toggle('active');
         if (searchBox.classList.contains('active')) {
-            searchInput.focus();  // Auto-focus the input when opened
+            searchInput.focus();
         }
     });
 
-    // Close search box when clicking outside (optional)
+    // Close search box when clicking outside
     document.addEventListener('click', function(event) {
         if (!searchBox.contains(event.target) && event.target !== searchBtn) {
             searchBox.classList.remove('active');
         }
     });
 
-    // Function to perform search
-    function performSearch() {
-        const query = searchInput.value.trim();
-        if (query === '') {
-            alert('Please enter a search term');
-            return;
-        }
-        
-        // Option 1: Redirect to search results page
-        window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
-        
-        // Option 2: Or filter products on the current page
-        // filterProducts(query);
-        
-        // Option 3: Or just show an alert (for testing)
-        // alert(`Searching for: ${query}`);
+    function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
-    // Search when clicking the Search button
-    searchSubmitBtn.addEventListener('click', performSearch);
+    function renderResults(results, query) {
+        if (!results.length) {
+            searchResults.innerHTML = '<p class="search-box-empty">No results for &ldquo;' + escapeHtml(query) + '&rdquo;</p>';
+            return;
+        }
+        searchResults.innerHTML = results.map(function(r) {
+            return '<a class="search-box-result" href="' + r.url + '">' +
+                     '<strong>' + escapeHtml(r.title) + '</strong>' +
+                     '<span>' + r.excerptHtml + '</span>' +
+                   '</a>';
+        }).join('');
+    }
 
-    // Search when pressing Enter key
+    let debounceTimer;
+    function runSearch() {
+        const query = searchInput.value.trim();
+        if (!query) {
+            searchResults.innerHTML = '';
+            return;
+        }
+        fetch('/api/search?q=' + encodeURIComponent(query))
+            .then(function(res) { return res.json(); })
+            .then(function(data) { renderResults(data.results || [], query); })
+            .catch(function() {
+                searchResults.innerHTML = '<p class="search-box-empty">Search is unavailable right now.</p>';
+            });
+    }
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(runSearch, 250);
+    });
+
+    if (searchBoxBtn) searchBoxBtn.addEventListener('click', runSearch);
+
     searchInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            performSearch();
+            event.preventDefault();
+            runSearch();
         }
     });
 });

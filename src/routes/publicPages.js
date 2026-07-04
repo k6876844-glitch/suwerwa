@@ -44,17 +44,16 @@ router.get('/', (req, res) => {
   res.render('public/pages/index', { navActive: 'home' });
 });
 
+router.get('/api/search', (req, res) => {
+  const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
+  const results = query ? searchIndex.search(searchEntries, query, 8) : [];
+  res.json({ results });
+});
+
 router.get(/^\/([a-z0-9-]+)\.html$/i, (req, res, next) => {
   const slug = req.params[0].toLowerCase();
   if (!whitelist.has(slug)) return next();
-
-  const locals = { navActive: NAV_ACTIVE[slug] || null };
-  if (slug === 'search-results') {
-    const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
-    locals.query = query;
-    locals.results = query ? searchIndex.search(searchEntries, query) : [];
-  }
-  res.render(`public/pages/${slug}`, locals);
+  res.render(`public/pages/${slug}`, { navActive: NAV_ACTIVE[slug] || null });
 });
 
 module.exports = router;

@@ -45,15 +45,11 @@ function extractTitle(html, fallback) {
   return title || fallback;
 }
 
-// Pages that shouldn't show up as search results themselves.
-const EXCLUDE_SLUGS = new Set(['search-results']);
-
 function buildIndex(pagesDir) {
   const entries = [];
   for (const file of fs.readdirSync(pagesDir)) {
     if (!file.endsWith('.ejs')) continue;
     const slug = file.slice(0, -4);
-    if (EXCLUDE_SLUGS.has(slug)) continue;
 
     const raw = fs.readFileSync(path.join(pagesDir, file), 'utf8');
     const title = extractTitle(raw, slug);
