@@ -4,6 +4,8 @@
     <a href="tel:+254725777449"> +254 725 777 449</a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="mailto:info@sfgsuwerwa.sc.ke"> info@sfgsuwerwa.sc.ke</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="/parentzone.html"><i class="fas fa-user-graduate"></i> Parent Zone</a>
   </div>
   <div class="topbar-socials">
    <a href="https://www.facebook.com/mhskabarak" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -29,6 +31,7 @@
       <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS, active: navActive === 'admission' }) %>
       <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
       <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact</a></li>
+      <li class="<%= navActive === 'parentzone' ? 'active' : '' %>"><a href="/parentzone.html">Parent Zone</a></li>
     </ul>
   </nav>
 </header>
@@ -44,6 +47,7 @@
     <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS }) %>
     <li><a href="/gallery.html">Gallery</a></li>
     <li><a href="/contact.html">Contact Us</a></li>
+    <li><a href="/parentzone.html">Parent Zone</a></li>
   </ul>
   <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
 </div>
