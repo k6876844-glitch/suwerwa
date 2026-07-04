@@ -54,6 +54,7 @@
 
       <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
       <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact Us</a></li>
+      <li class="<%= navActive === 'parentzone' ? 'active' : '' %>"><a href="/parentzone.html">Parent Zone</a></li>
 
     </ul>
     <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
@@ -72,6 +73,7 @@
     <%- include('../components/dropdown-menu', { label: 'Admission', items: nav.ADMISSION_ITEMS, active: navActive === 'admission' }) %>
     <li class="<%= navActive === 'gallery' ? 'active' : '' %>"><a href="/gallery.html">Gallery</a></li>
     <li class="<%= navActive === 'contact' ? 'active' : '' %>"><a href="/contact.html">Contact Us</a></li>
+    <li class="<%= navActive === 'parentzone' ? 'active' : '' %>"><a href="/parentzone.html">Parent Zone</a></li>
   </ul>
   <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
   <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu">
