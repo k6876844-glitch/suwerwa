@@ -78,6 +78,14 @@ body {
   cursor: pointer;
 }
 .login-btn:hover { background: #123166; }
+.login-btn:disabled { opacity: 0.7; cursor: wait; }
+.login-wait {
+  display: none;
+  text-align: center;
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: #5a6070;
+}
 .login-back {
   display: block;
   text-align: center;

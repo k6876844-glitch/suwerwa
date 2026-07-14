@@ -17,7 +17,7 @@
       <div class="login-error"><%= error %></div>
     <% } %>
 
-    <form method="POST" action="/admin/login">
+    <form method="POST" action="/admin/login" id="loginForm">
       <input type="hidden" name="redirect" value="<%= typeof redirect !== 'undefined' && redirect ? redirect : '' %>">
       <div class="form-group">
         <label for="username">Username</label>
@@ -27,9 +27,18 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" autocomplete="current-password" required>
       </div>
-      <button type="submit" class="login-btn">Log In</button>
+      <button type="submit" class="login-btn" id="loginBtn">Log In</button>
+      <p class="login-wait" id="loginWait">Waking up the server — this can take up to a minute on first login…</p>
     </form>
     <a href="/index.html" class="login-back">&larr; Back to the website</a>
   </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function () {
+      var btn = document.getElementById('loginBtn');
+      btn.disabled = true;
+      btn.textContent = 'Logging in…';
+      document.getElementById('loginWait').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
