@@ -281,6 +281,22 @@ function renderEvents(items) {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   RENDER GALLERY
+   ══════════════════════════════════════════════════════════════ */
+function renderGallery(photos) {
+  const grid = document.getElementById('galleryAdminGrid');
+  if (!grid) return;
+  if (!photos.length) { grid.innerHTML = '<div style="padding:20px;color:#5a6070;font-size:.82rem">No photos yet.</div>'; return; }
+  grid.innerHTML = photos.map(p => `
+    <div class="gallery-admin-item" data-id="${p.id}">
+      <img src="${p.url}" alt="${escHtml(p.caption)}" loading="lazy">
+      <span class="ga-cat">${escHtml(p.category)}</span>
+      <button class="del-btn" onclick="deletePhoto(${p.id})" title="Delete"><i class="fas fa-trash"></i></button>
+      <div class="ga-caption">${escHtml(p.caption)}</div>
+    </div>`).join('');
+}
+
+/* ══════════════════════════════════════════════════════════════
    DELETE HELPERS
    ══════════════════════════════════════════════════════════════ */
 function escHtml(str) {
@@ -303,9 +319,15 @@ async function deleteEvent(id) {
   await apiFetch(`/events/${id}`, { method:'DELETE' });
   loadDashboard();
 }
+async function deletePhoto(id) {
+  if (!confirm('Delete this photo?')) return;
+  await apiFetch(`/gallery/${id}`, { method:'DELETE' });
+  loadDashboard();
+}
 window.deleteNews    = deleteNews;
 window.deleteNotice  = deleteNotice;
 window.deleteEvent   = deleteEvent;
+window.deletePhoto   = deletePhoto;
 
 /* ══════════════════════════════════════════════════════════════
    CHART.JS SETUP
@@ -530,12 +552,13 @@ function renderAnalyticsCharts() {
    ══════════════════════════════════════════════════════════════ */
 async function loadDashboard() {
   try {
-    const [statsRes, newsRes, noticesRes, eventsRes, analyticsRes] = await Promise.all([
+    const [statsRes, newsRes, noticesRes, eventsRes, analyticsRes, galleryRes] = await Promise.all([
       apiFetch('/stats'),
       apiFetch('/news'),
       apiFetch('/notices'),
       apiFetch('/events'),
       apiFetch('/analytics'),
+      apiFetch('/gallery'),
     ]);
 
     showBanner(true);
@@ -544,6 +567,7 @@ async function loadDashboard() {
     renderNews(newsRes.news);
     renderNotices(noticesRes.notices);
     renderEvents(eventsRes.events);
+    renderGallery(galleryRes.photos);
 
     analyticsData = analyticsRes.analytics;
     drawOverviewCharts(analyticsRes.analytics.kcseHistory, analyticsRes.analytics.enrollmentTrend);
@@ -598,6 +622,12 @@ function loadFallbackData() {
     { id:3, title:'Inter-School Debate Competition', event_date:'2025-08-22', venue:'Main Hall',        event_type:'Event' },
     { id:4, title:'Open Day — Parents & Guardians',  event_date:'2025-09-14', venue:'School Grounds',   event_type:'Event' },
     { id:5, title:'Prize Giving Day & Graduation',   event_date:'2025-11-22', venue:'School Grounds',   event_type:'School' },
+  ]);
+
+  renderGallery([
+    { id:1, url:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300&q=60', category:'academics', caption:'Classroom learning' },
+    { id:2, url:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=60', category:'sports', caption:'Athletics' },
+    { id:3, url:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=300&q=60', category:'events', caption:'Prize Giving Day' },
   ]);
 
   const fallbackKcse = [
@@ -708,6 +738,32 @@ document.getElementById('eventForm')?.addEventListener('submit', async e => {
   } finally {
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-paper-plane"></i> Add Event';
+  }
+});
+
+/* ══════════════════════════════════════════════════════════════
+   ADD GALLERY PHOTO FORM
+   ══════════════════════════════════════════════════════════════ */
+document.getElementById('galleryForm')?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn  = e.target.querySelector('button[type=submit]');
+  const body = {
+    url:      document.getElementById('gUrl').value.trim(),
+    category: document.getElementById('gCategory').value,
+    caption:  document.getElementById('gCaption').value.trim(),
+  };
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving…';
+  try {
+    await apiFetch('/gallery', { method:'POST', body: JSON.stringify(body) });
+    closeModal('modalGallery');
+    e.target.reset();
+    await loadDashboard();
+  } catch {
+    alert('Server is offline. Start the server to save data.');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Add Photo';
   }
 });
 

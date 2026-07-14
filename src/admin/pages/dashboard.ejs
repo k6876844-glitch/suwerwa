@@ -203,6 +203,20 @@
         </div>
       </div>
 
+      <!-- Photo Gallery -->
+      <div class="dash-card full-width">
+        <div class="card-header">
+          <span><i class="fas fa-images"></i> Photo Gallery</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="add-btn" onclick="openModal('modalGallery')"><i class="fas fa-plus"></i> Add Photo</button>
+            <a href="/gallery.html" target="_blank" class="card-link">View all <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="gallery-admin-grid" id="galleryAdminGrid">
+          <div class="loading-row"><i class="fas fa-spinner fa-spin"></i> Loading…</div>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -329,6 +343,39 @@
         </div>
         <button type="submit" class="btn btn-navy" style="width:100%;justify-content:center">
           <i class="fas fa-paper-plane"></i> Add Event
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Photo Modal -->
+  <div class="modal-overlay" id="modalGallery">
+    <div class="modal">
+      <div class="modal-header">
+        <span><i class="fas fa-image"></i> Add Gallery Photo</span>
+        <button class="modal-close" onclick="closeModal('modalGallery')"><i class="fas fa-times"></i></button>
+      </div>
+      <form class="modal-form" id="galleryForm">
+        <div class="form-group">
+          <label>Image URL *</label>
+          <input type="url" id="gUrl" placeholder="https://example.com/photo.jpg" required>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="gCategory">
+            <option value="academics">Academics</option>
+            <option value="sports">Sports &amp; Games</option>
+            <option value="events">Events</option>
+            <option value="campus" selected>Campus</option>
+            <option value="scouts">Scouts &amp; Clubs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Caption *</label>
+          <input type="text" id="gCaption" placeholder="e.g. Prize Giving Day 2026" required>
+        </div>
+        <button type="submit" class="btn btn-navy" style="width:100%;justify-content:center">
+          <i class="fas fa-paper-plane"></i> Add Photo
         </button>
       </form>
     </div>

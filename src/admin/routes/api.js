@@ -5,6 +5,7 @@ const newsService = require('../../services/newsService');
 const noticeService = require('../../services/noticeService');
 const eventService = require('../../services/eventService');
 const statsService = require('../../services/statsService');
+const galleryService = require('../../services/galleryService');
 
 const router = express.Router();
 
@@ -67,6 +68,27 @@ router.post('/events', (req, res) => {
 router.delete('/events/:id', (req, res) => {
   const ok = eventService.deleteById(req.params.id);
   if (!ok) return res.status(404).json({ error: 'Event not found' });
+  res.json({ ok: true });
+});
+
+router.get('/gallery', (req, res) => {
+  res.json({ photos: galleryService.list() });
+});
+
+router.post('/gallery', (req, res) => {
+  const { url, category, caption } = req.body;
+  if (!url || !/^https?:\/\//i.test(url)) {
+    return res.status(400).json({ error: 'A valid image url (http/https) is required' });
+  }
+  if (!galleryService.CATEGORIES.includes(category)) {
+    return res.status(400).json({ error: `category must be one of: ${galleryService.CATEGORIES.join(', ')}` });
+  }
+  res.status(201).json({ photo: galleryService.create({ url, category, caption }) });
+});
+
+router.delete('/gallery/:id', (req, res) => {
+  const ok = galleryService.deleteById(req.params.id);
+  if (!ok) return res.status(404).json({ error: 'Photo not found' });
   res.json({ ok: true });
 });
 

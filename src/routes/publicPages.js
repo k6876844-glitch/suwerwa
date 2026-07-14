@@ -4,6 +4,9 @@ const path = require('path');
 const express = require('express');
 const { buildPageWhitelist } = require('../shared/pageWhitelist');
 const searchIndex = require('../shared/searchIndex');
+const newsService = require('../services/newsService');
+const noticeService = require('../services/noticeService');
+const galleryService = require('../services/galleryService');
 
 const router = express.Router();
 const pagesDir = path.join(__dirname, '..', 'public', 'pages');
@@ -50,10 +53,19 @@ router.get('/api/search', (req, res) => {
   res.json({ results });
 });
 
+// Slugs whose page needs data from the admin-managed JSON store, not just
+// static markup. Keeps the generic render below simple for every other page.
+const DYNAMIC_DATA = {
+  news: () => ({ news: newsService.list() }),
+  noticeboard: () => ({ notices: noticeService.list() }),
+  gallery: () => ({ photos: galleryService.list() }),
+};
+
 router.get(/^\/([a-z0-9-]+)\.html$/i, (req, res, next) => {
   const slug = req.params[0].toLowerCase();
   if (!whitelist.has(slug)) return next();
-  res.render(`public/pages/${slug}`, { navActive: NAV_ACTIVE[slug] || null });
+  const extra = DYNAMIC_DATA[slug] ? DYNAMIC_DATA[slug]() : {};
+  res.render(`public/pages/${slug}`, { navActive: NAV_ACTIVE[slug] || null, ...extra });
 });
 
 module.exports = router;

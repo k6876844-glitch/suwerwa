@@ -33,27 +33,17 @@
 <p>The SFGS Notice Board is the primary channel for official announcements affecting students, parents, and staff. From term dates and fee reminders to school events and important administrative notices  check here regularly to stay informed.</p>
 
 <h2 class="section-heading">Current Notices</h2>
-<div class="notice-list"><div class="notice-item pinned">
-  <div class="notice-date-block"><div class="day">04</div><div class="month">Dec</div><div class="year">2025</div></div>
-  <div class="notice-body"><span class="notice-tag">Notice</span><span class="pinned-icon"></span><h3 style="margin-top:.5rem">St Francis Suwerwa Girls</h3><p>Our mission is to provide holistic educational services in a learner-centred, co-educational Christian environment, guided by commitment, fairness, and integrity.</p></div>
-  <a class="notice-cta" href="#">Read more </a>
-</div><div class="notice-item">
-  <div class="notice-date-block"><div class="day">04</div><div class="month">Jun</div><div class="year">2025</div></div>
-  <div class="notice-body"><span class="notice-tag">Calendar</span><h3 style="margin-top:.5rem">2025 Term Dates Released</h3><p>The 2025 academic year opens on 6th January 2025 and runs through to 4th April 2025 for Term One. Full term calendar attached.</p></div>
-  <a class="notice-cta" href="#">Read more </a>
-</div><div class="notice-item">
-  <div class="notice-date-block"><div class="day">15</div><div class="month">Mar</div><div class="year">2026</div></div>
-  <div class="notice-body"><span class="notice-tag">Event</span><h3 style="margin-top:.5rem">19th Annual Prize-Giving Ceremony</h3><p>Parents and guardians are invited to the upcoming Annual Thanksgiving and Prize-Giving Ceremony. Details to follow via class teachers.</p></div>
-  <a class="notice-cta" href="#">Read more </a>
-</div><div class="notice-item">
-  <div class="notice-date-block"><div class="day">10</div><div class="month">Jan</div><div class="year">2026</div></div>
-  <div class="notice-body"><span class="notice-tag">Finance</span><h3 style="margin-top:.5rem">Fee Payment Reminder  Term 1</h3><p>All parents are reminded to clear Term 1 fees before reporting day. Payment via bank slip or M-Pesa Paybill as detailed in the fee structure.</p></div>
-  <a class="notice-cta" href="#">Read more </a>
-</div><div class="notice-item">
-  <div class="notice-date-block"><div class="day">06</div><div class="month">Jan</div><div class="year">2026</div></div>
-  <div class="notice-body"><span class="notice-tag">Reporting</span><h3 style="margin-top:.5rem">School Opening Day  Term 1, 2026</h3><p>Form 2, 3 and 4 students report on 6th January 2026. Form 1 reporting and orientation will be communicated separately.</p></div>
-  <a class="notice-cta" href="#">Read more </a>
-</div></div>
+<div class="notice-list">
+<% if (!notices.length) { %>
+  <p>No notices have been posted yet.</p>
+<% } %>
+<% notices.forEach(function (n, i) { var d = new Date(n.created_at); %>
+<div class="notice-item<%= i === 0 ? ' pinned' : '' %>">
+  <div class="notice-date-block"><div class="day"><%= d.toLocaleDateString('en-GB', { day: '2-digit' }) %></div><div class="month"><%= d.toLocaleDateString('en-GB', { month: 'short' }) %></div><div class="year"><%= d.getFullYear() %></div></div>
+  <div class="notice-body"><span class="notice-tag"><%= n.category %></span><% if (n.is_urgent) { %><span class="pinned-icon"></span><% } %><h3 style="margin-top:.5rem"><%= n.title %></h3><p><%= n.content %></p></div>
+</div>
+<% }); %>
+</div>
 
 <div class="term-dates-banner">
   <div>

@@ -55,4 +55,31 @@ const analytics = {
   ],
 };
 
-module.exports = { news, notices, events, analytics, users: [] };
+const gallery = [
+  { id: 1, url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80', category: 'academics', caption: 'Students engaged in classroom learning' },
+  { id: 2, url: 'https://images.unsplash.com/photo-1532094349884-543559244dee?w=600&q=80', category: 'academics', caption: 'Biology laboratory session' },
+  { id: 3, url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80', category: 'academics', caption: 'Library and reading sessions' },
+  { id: 4, url: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80', category: 'academics', caption: 'Computer lab and ICT lessons' },
+  { id: 5, url: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80', category: 'sports', caption: 'Athletics and field events' },
+  { id: 6, url: 'https://images.unsplash.com/photo-1546519638405-a9f9c4e4cddb?w=600&q=80', category: 'sports', caption: 'Netball tournament 2024' },
+  { id: 7, url: 'https://images.unsplash.com/photo-1459865264687-595d652de67e?w=600&q=80', category: 'sports', caption: 'Inter-school football competition' },
+  { id: 8, url: 'https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=80', category: 'sports', caption: 'Swimming gala event' },
+  { id: 9, url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', category: 'events', caption: 'Annual Prize Giving Day ceremony' },
+  { id: 10, url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80', category: 'events', caption: 'School parade and march past' },
+  { id: 11, url: 'https://images.unsplash.com/photo-1522158637959-30385a09e0da?w=600&q=80', category: 'events', caption: 'Cultural and music festival' },
+  { id: 12, url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80', category: 'events', caption: 'Graduation and KCSE celebration' },
+  { id: 13, url: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80', category: 'campus', caption: 'Main school building and entrance' },
+  { id: 14, url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80', category: 'campus', caption: 'School chapel and prayer grounds' },
+  { id: 15, url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80', category: 'campus', caption: 'Dormitories and boarding facilities' },
+  { id: 16, url: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=600&q=80', category: 'campus', caption: 'Sports fields and recreation area' },
+  { id: 17, url: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80', category: 'scouts', caption: 'Kenya Girl Guides activities' },
+  { id: 18, url: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80', category: 'scouts', caption: 'Drama club performance' },
+  { id: 19, url: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80', category: 'scouts', caption: 'Debate and public speaking club' },
+  { id: 20, url: 'https://images.unsplash.com/photo-1542601906897-d4be9c57ef56?w=600&q=80', category: 'scouts', caption: 'Environmental and conservation club' },
+  { id: 21, url: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600&q=80', category: 'academics', caption: 'Chemistry practical experiment' },
+  { id: 22, url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80', category: 'events', caption: 'Sports day opening ceremony' },
+  { id: 23, url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80', category: 'campus', caption: 'School garden and agriculture' },
+  { id: 24, url: 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=600&q=80', category: 'sports', caption: 'Basketball practice session' },
+];
+
+module.exports = { news, notices, events, analytics, gallery, users: [] };
