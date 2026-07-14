@@ -76,14 +76,17 @@ router.get('/gallery', (req, res) => {
 });
 
 router.post('/gallery', (req, res) => {
-  const { url, category, caption } = req.body;
+  const { url, category, caption, event_id } = req.body;
   if (!url || !/^https?:\/\//i.test(url)) {
     return res.status(400).json({ error: 'A valid image url (http/https) is required' });
   }
   if (!galleryService.CATEGORIES.includes(category)) {
     return res.status(400).json({ error: `category must be one of: ${galleryService.CATEGORIES.join(', ')}` });
   }
-  res.status(201).json({ photo: galleryService.create({ url, category, caption }) });
+  if (event_id && !eventService.list().some((e) => e.id === Number(event_id))) {
+    return res.status(400).json({ error: 'event_id does not match an existing event' });
+  }
+  res.status(201).json({ photo: galleryService.create({ url, category, caption, event_id }) });
 });
 
 router.delete('/gallery/:id', (req, res) => {

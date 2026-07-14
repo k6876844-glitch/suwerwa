@@ -257,8 +257,20 @@ function renderNotices(items) {
    RENDER EVENTS
    ══════════════════════════════════════════════════════════════ */
 const EVENT_TYPE_CLASS = { School:'et-school', Exam:'et-exam', Event:'et-event' };
+let currentEvents = [];
+
+function populateEventSelect(items) {
+  const select = document.getElementById('gEvent');
+  if (!select) return;
+  const current = select.value;
+  select.innerHTML = '<option value="">None</option>' +
+    items.map(e => `<option value="${e.id}">${escHtml(e.title)}</option>`).join('');
+  select.value = current;
+}
 
 function renderEvents(items) {
+  currentEvents = items;
+  populateEventSelect(items);
   const list = document.getElementById('eventsList');
   if (!list) return;
   const upcoming = items.filter(e => new Date(e.event_date) >= new Date()).slice(0, 6);
@@ -287,13 +299,16 @@ function renderGallery(photos) {
   const grid = document.getElementById('galleryAdminGrid');
   if (!grid) return;
   if (!photos.length) { grid.innerHTML = '<div style="padding:20px;color:#5a6070;font-size:.82rem">No photos yet.</div>'; return; }
-  grid.innerHTML = photos.map(p => `
+  grid.innerHTML = photos.map(p => {
+    const ev = p.event_id ? currentEvents.find(e => e.id === p.event_id) : null;
+    return `
     <div class="gallery-admin-item" data-id="${p.id}">
       <img src="${p.url}" alt="${escHtml(p.caption)}" loading="lazy">
       <span class="ga-cat">${escHtml(p.category)}</span>
       <button class="del-btn" onclick="deletePhoto(${p.id})" title="Delete"><i class="fas fa-trash"></i></button>
-      <div class="ga-caption">${escHtml(p.caption)}</div>
-    </div>`).join('');
+      <div class="ga-caption">${escHtml(p.caption)}${ev ? ` &middot; <i class="fas fa-calendar-check"></i> ${escHtml(ev.title)}` : ''}</div>
+    </div>`;
+  }).join('');
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -751,6 +766,7 @@ document.getElementById('galleryForm')?.addEventListener('submit', async e => {
     url:      document.getElementById('gUrl').value.trim(),
     category: document.getElementById('gCategory').value,
     caption:  document.getElementById('gCaption').value.trim(),
+    event_id: document.getElementById('gEvent').value || null,
   };
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving…';

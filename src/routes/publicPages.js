@@ -7,6 +7,7 @@ const searchIndex = require('../shared/searchIndex');
 const newsService = require('../services/newsService');
 const noticeService = require('../services/noticeService');
 const galleryService = require('../services/galleryService');
+const eventService = require('../services/eventService');
 
 const router = express.Router();
 const pagesDir = path.join(__dirname, '..', 'public', 'pages');
@@ -56,7 +57,7 @@ router.get('/api/search', (req, res) => {
 // Slugs whose page needs data from the admin-managed JSON store, not just
 // static markup. Keeps the generic render below simple for every other page.
 const DYNAMIC_DATA = {
-  news: () => ({ news: newsService.list() }),
+  news: () => ({ news: newsService.list(), events: eventService.list(), photos: galleryService.list() }),
   noticeboard: () => ({ notices: noticeService.list() }),
   gallery: () => ({ photos: galleryService.list() }),
 };
