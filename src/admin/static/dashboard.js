@@ -295,10 +295,14 @@ function renderEvents(items) {
 /* ══════════════════════════════════════════════════════════════
    RENDER GALLERY
    ══════════════════════════════════════════════════════════════ */
-function renderGallery(photos) {
+let currentPhotos = [];
+let galleryFilter = 'all';
+
+function renderGalleryGrid() {
   const grid = document.getElementById('galleryAdminGrid');
   if (!grid) return;
-  if (!photos.length) { grid.innerHTML = '<div style="padding:20px;color:#5a6070;font-size:.82rem">No photos yet.</div>'; return; }
+  const photos = galleryFilter === 'all' ? currentPhotos : currentPhotos.filter(p => p.category === galleryFilter);
+  if (!photos.length) { grid.innerHTML = '<div style="padding:20px;color:#5a6070;font-size:.82rem">No photos in this category yet.</div>'; return; }
   grid.innerHTML = photos.map(p => {
     const ev = p.event_id ? currentEvents.find(e => e.id === p.event_id) : null;
     return `
@@ -310,6 +314,21 @@ function renderGallery(photos) {
     </div>`;
   }).join('');
 }
+
+function renderGallery(photos) {
+  currentPhotos = photos;
+  renderGalleryGrid();
+}
+
+document.querySelectorAll('.ga-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ga-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    galleryFilter = btn.dataset.cat;
+    renderGalleryGrid();
+    if (galleryFilter !== 'all') document.getElementById('gCategory').value = galleryFilter;
+  });
+});
 
 /* ══════════════════════════════════════════════════════════════
    DELETE HELPERS

@@ -497,6 +497,18 @@ input  { font-family:inherit; }
 .gallery-admin-item:hover .del-btn { opacity:1; }
 .del-btn:hover { background:rgba(192,57,43,0.1); }
 
+.gallery-admin-filters {
+  display:flex; gap:8px; flex-wrap:wrap;
+  padding:14px 20px 0;
+}
+.ga-filter-btn {
+  padding:5px 14px; border-radius:16px; border:1px solid var(--border);
+  background:var(--bg); color:var(--muted); font-size:0.74rem; font-weight:600;
+  cursor:pointer; transition:var(--trans);
+}
+.ga-filter-btn:hover { background:var(--border); }
+.ga-filter-btn.active { background:var(--navy); border-color:var(--navy); color:#fff; }
+
 .gallery-admin-grid {
   display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
   gap:12px; padding:16px 20px;
