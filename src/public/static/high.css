@@ -7963,9 +7963,13 @@ footer a {
 }
 .mvv-grid {
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:1.5rem;
   margin-bottom:2.5rem;
+}
+/* Core Values card spans both columns so its pills have room to wrap */
+.mvv-card-wide {
+  grid-column:1 / -1;
 }
 .mvv-card {
   background:linear-gradient(145deg,#fff,var(--cream));
