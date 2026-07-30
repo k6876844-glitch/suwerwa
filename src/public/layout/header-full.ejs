@@ -15,17 +15,11 @@
 
 <!-- MAIN HEADER -->
 <header class="main-header">
-  <div class="header-left">
-    <!-- SIDEBAR TOGGLE  sits directly left of the logo, opens the sliding nav drawer -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-      <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
-    </button>
-    <div class="logo">
-      <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
-      <div class="logo-text">
-      <h2><b>ST FRANCIS GIRLS</b></h2>
-        <subtitle><b>SUWERWA-KITALE</b></subtitle>
-      </div>
+  <div class="logo">
+    <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
+    <div class="logo-text">
+    <h2><b>ST FRANCIS GIRLS</b></h2>
+      <subtitle><b>SUWERWA-KITALE</b></subtitle>
     </div>
   </div>
   <div class="flex-center">
@@ -35,6 +29,10 @@
     <div class="icons">
       <i class="fas fa-search" id="searchBtn"></i>
     </div>
+    <!-- HAMBURGER  opens mobile drawer -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -68,14 +66,9 @@
 
 <!-- STICKY HEADER -->
 <div class="sticky-header" id="stickyHeader">
-  <div class="sticky-left">
-    <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-      <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
-    </button>
-    <div class="sticky-logo">
-      <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
-      <span>SFG SUWERWA</span>
-    </div>
+  <div class="sticky-logo">
+    <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
+    <span>SFG SUWERWA</span>
   </div>
   <ul class="nav-menu">
     <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
@@ -86,6 +79,9 @@
     <li class="<%= navActive === 'parentzone' ? 'active' : '' %>"><a href="/parentzone.html">Parent Zone</a></li>
   </ul>
   <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
+  <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 
 <!-- MOBILE OVERLAY (dark backdrop) -->
