@@ -102,53 +102,82 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /*  MOBILE NAV  */
+  /*  MOBILE NAV / SIDEBAR DRAWER
+      Present on every page (both header-full.ejs and header-simple.ejs
+      render the button + drawer), but guarded anyway since this script
+      is shared across pages with different header markup. */
   const hamburger       = document.getElementById('hamburger');
   const stickyHamburger = document.getElementById('stickyHamburger');
   const mobileNav       = document.getElementById('mobileNav');
   const mobileClose     = document.getElementById('mobileClose');
   const mobileOverlay   = document.getElementById('mobileOverlay');
 
-  function openMobile()  { mobileNav.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
-  function closeMobile() { mobileNav.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
+  if (hamburger && mobileNav && mobileClose && mobileOverlay) {
+    function openMobile()  {
+      mobileNav.classList.add('active');
+      mobileOverlay.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      stickyHamburger?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobile() {
+      mobileNav.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      stickyHamburger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
 
-  hamburger.addEventListener('click', openMobile);
-  stickyHamburger?.addEventListener('click', openMobile);
-  mobileClose.addEventListener('click', closeMobile);
-  mobileOverlay.addEventListener('click', closeMobile);
+    hamburger.addEventListener('click', openMobile);
+    stickyHamburger?.addEventListener('click', openMobile);
+    mobileClose.addEventListener('click', closeMobile);
+    mobileOverlay.addEventListener('click', closeMobile);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) closeMobile();
+    });
+  }
 
   /*  STICKY HEADER  */
   const sticky = document.getElementById('stickyHeader');
-  window.addEventListener('scroll', function () {
-    sticky.classList.toggle('visible', window.scrollY > 200);
-  });
+  if (sticky) {
+    window.addEventListener('scroll', function () {
+      sticky.classList.toggle('visible', window.scrollY > 200);
+    });
+  }
 
-  /*  HERO SLIDESHOW  */
-  const slides = document.querySelectorAll('.hero-slider .slide');
-  const dots   = document.querySelectorAll('.slider-dot');
-  let current  = 0;
-  let timer;
+  /*  HERO SLIDESHOW  (homepage only  guarded since most pages don't have one) */
+  const slides   = document.querySelectorAll('.hero-slider .slide');
+  const dots     = document.querySelectorAll('.slider-dot');
+  const prevBtn  = document.getElementById('prevSlide');
+  const nextBtn  = document.getElementById('nextSlide');
 
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    clearInterval(timer);
+  if (slides.length && dots.length && prevBtn && nextBtn) {
+    let current = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
     timer = setInterval(() => goTo(current + 1), 5000);
   }
 
-  document.getElementById('prevSlide').addEventListener('click', () => goTo(current - 1));
-  document.getElementById('nextSlide').addEventListener('click', () => goTo(current + 1));
-  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
-  timer = setInterval(() => goTo(current + 1), 5000);
-
-  /*  SEARCH  */
+  /*  SEARCH OVERLAY  (index/contact/gallery only  guarded for other pages) */
   const searchOverlay = document.getElementById('searchOverlay');
   const searchClose   = document.getElementById('searchClose');
-  searchClose.addEventListener('click', () => searchOverlay.classList.remove('active'));
-  searchOverlay.addEventListener('click', function(e) { if(e.target===this) this.classList.remove('active'); });
+  if (searchOverlay && searchClose) {
+    searchClose.addEventListener('click', () => searchOverlay.classList.remove('active'));
+    searchOverlay.addEventListener('click', function(e) { if(e.target===this) this.classList.remove('active'); });
+  }
 
   /*  SCROLL ANIMATIONS  */
   const observer = new IntersectionObserver(entries => {

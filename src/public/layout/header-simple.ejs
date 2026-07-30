@@ -17,11 +17,17 @@
 
 <!-- HEADER -->
 <header>
-  <div class="logo-area">
-    <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-badge">
-    <div class="logo-text">
-      <h1>St Francis Girls Suwerwa</h1>
-      <p>SFGS &nbsp;&nbsp; Trans Nzoia County, Kenya</p>
+  <div class="header-left">
+    <!-- SIDEBAR TOGGLE  sits directly left of the logo, opens the sliding nav drawer -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
+    </button>
+    <div class="logo-area">
+      <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-badge">
+      <div class="logo-text">
+        <h1>St Francis Girls Suwerwa</h1>
+        <p>SFGS &nbsp;&nbsp; Trans Nzoia County, Kenya</p>
+      </div>
     </div>
   </div>
   <nav>
@@ -37,9 +43,14 @@
 </header>
 <!-- STICKY HEADER -->
 <div class="sticky-header" id="stickyHeader">
-  <div class="sticky-logo">
-    <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
-    <span>SFG Suwerwa</span>
+  <div class="sticky-left">
+    <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="hamburger-icon" aria-hidden="true">&#9776;</span>
+    </button>
+    <div class="sticky-logo">
+      <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
+      <span>SFG Suwerwa</span>
+    </div>
   </div>
   <ul class="nav-menu">
     <li><a href="/index.html">Home</a></li>
@@ -51,3 +62,37 @@
   </ul>
   <div class="nav-phone"><i class="fas fa-phone"></i> +254 725 777 449</div>
 </div>
+
+<!-- MOBILE OVERLAY (dark backdrop) -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER: slides in from the left, mirrors header-full's drawer -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>SFG SUWERWA</span>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+
+    <li><a href="#">About Us</a></li>
+    <% nav.ABOUT_US_SIMPLE.forEach(function(item) { %>
+    <li><a href="<%= item.href %>" class="mobile-sub"><%- item.label %></a></li>
+    <% }); %>
+
+    <li><a href="#">Admission</a></li>
+    <% nav.ADMISSION_ITEMS.forEach(function(item) { %>
+    <li><a href="<%= item.href %>" class="mobile-sub"><%- item.label %></a></li>
+    <% }); %>
+
+    <li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+    <li><a href="/parentzone.html">Parent Zone</a></li>
+  </ul>
+</nav>
+
+<!-- Pages using this header don't otherwise load high.js (only index/contact/
+     gallery do, via search-overlay.ejs), so it's included here to power the
+     sidebar drawer above. Safe to load once per page since header-simple.ejs
+     is never combined with header-full.ejs. -->
+<script src="/high.js"></script>
