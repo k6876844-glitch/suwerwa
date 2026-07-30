@@ -5548,6 +5548,15 @@ table.kcse-table .grade-cell {
 .grade-C-plus {
   color:#a04a26;
 }
+.grade-C {
+  color:#b23a2e;
+}
+.grade-C-minus {
+  color:#c0392b;
+}
+.grade-D-plus {
+  color:#8b2e22;
+}
 .row-sub {
   background:#f5f0e0 !important;
   font-size:.78rem;
