@@ -131,27 +131,22 @@ img {
 }
 /* Hamburger  always visible */
 .hamburger {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
 }
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: var(--navy);
-  margin: 5px 0;
-  transition: .3s;
+.hamburger-emoji {
+  font-size: 22px;
+  line-height: 1;
 }
-/* Sticky header has a navy background, so its hamburger needs light bars;
-   it only replaces the sticky nav-menu once that's hidden on mobile. */
+/* Sticky header has a navy background; it only replaces the sticky
+   nav-menu once that's hidden on mobile. */
 .sticky-hamburger {
   display: none;
-}
-.sticky-hamburger span {
-  background: var(--white);
 }
 /* Search icon in header */
 .header-actions {
