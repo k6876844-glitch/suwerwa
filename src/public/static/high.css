@@ -103,15 +103,15 @@ img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--navy);
+  object-fit: cover;
   border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  color: var(--gold);
-  font-size: 20px;
-  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35), inset 0 1px 2px rgba(255,255,255,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.logo-placeholder:hover {
+  transform: perspective(500px) rotateY(10deg) scale(1.05);
+  box-shadow: 0 10px 22px rgba(0,0,0,.45), inset 0 1px 2px rgba(255,255,255,.45);
 }
 .logo-text h2 {
   font-size: 13px;
@@ -1293,7 +1293,6 @@ footer {
 .footer-logo-custom {
   width: 48px;
   height: 48px;
-  font-size: 16px;
 }
 .footer-title-text {
   color: var(--white);
@@ -10730,4 +10729,21 @@ footer {
 }
 .search-suggestions a:hover {
   opacity: .88;
+}
+
+/* Real logo image override. .logo-badge is defined many times earlier in this
+   file (legacy per-page style duplication); placed last so it always wins the
+   cascade without having to touch every duplicate block. */
+.logo-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35), inset 0 1px 2px rgba(255,255,255,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.logo-badge:hover {
+  transform: perspective(500px) rotateY(10deg) scale(1.05);
+  box-shadow: 0 10px 22px rgba(0,0,0,.45), inset 0 1px 2px rgba(255,255,255,.45);
 }
