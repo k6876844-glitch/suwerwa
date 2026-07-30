@@ -5446,6 +5446,42 @@ footer a {
 .results-section {
   margin-bottom:2.5rem;
 }
+/* Simple two/three-column data table (leadership history, performance summaries)
+   shared across pages via /high.css so it stays visually consistent site-wide. */
+.table-wrap {
+  overflow-x:auto;
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-bottom:2rem;
+  box-shadow:0 4px 14px rgba(10,31,60,.05);
+}
+.simple-table {
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+}
+.simple-table thead {
+  background:var(--navy);
+}
+.simple-table th {
+  color:var(--gold);
+  text-align:left;
+  padding:.9rem 1.4rem;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.simple-table td {
+  padding:.75rem 1.4rem;
+  border-top:1px solid var(--border);
+  font-size:.92rem;
+  color:#2c2c2c;
+}
+.simple-table tbody tr:nth-child(even) {
+  background:var(--cream);
+}
+
 .results-table-wrap {
   overflow-x:auto;
   border-radius:12px;
