@@ -49,45 +49,121 @@
   <main class="content">
     <p>
       The Parent Zone gives parents and guardians a single place to keep up with their daughter's
-      journey at St Francis Girls Suwerwa  from academic performance to fee statements and school
-      announcements. It is designed to keep the home and the school working together.
+      journey at St Francis Girls Suwerwa  fee statements, academic progress, report cards,
+      attendance, and school communication, all in one place. It is designed to keep the home and
+      the school working together.
     </p>
 
-    <!-- Zeraki Analytics -->
+    <!-- Zeraki Analytics Parent Portal: responsive embed with automatic
+         fallback if the portal blocks being shown inside an iframe. -->
     <div class="section-block">
       <h3>Zeraki Analytics Parent Portal</h3>
       <p>
         St Francis Girls Suwerwa uses <strong>Zeraki Analytics</strong>, a school management platform
-        used widely across Kenyan secondary schools, to give parents real-time access to exam results,
-        performance trends, fee statements, and attendance  without needing to visit the school in person.
+        used widely across Kenyan secondary schools, to give parents real-time access to fee
+        statements, academic progress, report cards, attendance, and school communication  without
+        needing to visit the school in person.
       </p>
 
-      <div class="zeraki-embed-wrap">
-        <!-- PLACEHOLDER: swap src for the school's real Zeraki Analytics parent-portal URL -->
-        <iframe
-          class="zeraki-iframe"
-          src="about:blank#REPLACE_WITH_ZERAKI_PARENT_PORTAL_URL"
-          title="Zeraki Analytics Parent Portal"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
-        </iframe>
-      </div>
+      <div class="zeraki-card">
 
-      <div class="zeraki-notice">
-        <i class="fas fa-circle-info"></i>
-        <p>
-          This is a placeholder embed  the <code>src</code> above needs to be swapped for the school's
-          real Zeraki Analytics parent-portal URL before this goes live. Once set, if the portal doesn't
-          load inside this page (some login portals block embedding), use the button below so parents can
-          still open it directly.
-        </p>
-      </div>
+        <!-- Responsive embed wrapper: scales by aspect ratio instead of a fixed
+             pixel height, so it fits desktop, tablet, and mobile alike. -->
+        <div class="zeraki-embed-wrap" id="zerakiEmbedWrap">
 
-      <a class="apply-btn" href="#REPLACE_WITH_ZERAKI_PARENT_PORTAL_URL" target="_blank" rel="noopener">
-        Open Zeraki Portal <i class="fas fa-arrow-up-right-from-square"></i>
-      </a>
+          <!-- Shown while the iframe is loading; hidden as soon as it loads. -->
+          <div class="zeraki-spinner" id="zerakiSpinner" aria-live="polite">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Loading Parent Portal…</p>
+          </div>
+
+          <iframe
+            class="zeraki-iframe"
+            id="zerakiIframe"
+            title="Zeraki Analytics Parent Portal"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+
+        <!-- Shown automatically instead of the iframe if Zeraki blocks embedding
+             (or the portal URL hasn't been configured yet). -->
+        <div class="zeraki-fallback" id="zerakiFallback" hidden>
+          <i class="fas fa-triangle-exclamation"></i>
+          <p>The Parent Portal cannot be displayed inside the website. Click the button below to open it in a new tab.</p>
+        </div>
+
+        <div class="zeraki-actions">
+          <a class="zeraki-btn" id="zerakiOpenBtn" href="#" target="_blank" rel="noopener noreferrer">
+            Open Zeraki Parent Portal <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <script>
+      /* ------------------------------------------------------------------
+         Zeraki Analytics Parent Portal embed
+         --------------------------------------------------------------------
+         Only this one line needs to change once the school's real portal
+         URL is available. The iframe src, the "open in new tab" button,
+         the loading spinner, and the blocked-embed fallback all wire
+         themselves up from this single value automatically.
+         ------------------------------------------------------------------ */
+      const parentPortalUrl = "PASTE_YOUR_ZERAKI_PARENT_PORTAL_LINK_HERE";
+
+      (function () {
+        var iframe    = document.getElementById('zerakiIframe');
+        var spinner   = document.getElementById('zerakiSpinner');
+        var embedWrap = document.getElementById('zerakiEmbedWrap');
+        var fallback  = document.getElementById('zerakiFallback');
+        var openBtn   = document.getElementById('zerakiOpenBtn');
+
+        openBtn.href = parentPortalUrl;
+
+        // No real URL configured yet - skip the embed attempt entirely so
+        // the page never shows a broken/blank frame.
+        if (!parentPortalUrl || parentPortalUrl.indexOf('PASTE_YOUR_') === 0) {
+          embedWrap.hidden = true;
+          fallback.hidden = false;
+          return;
+        }
+
+        var settled = false;
+
+        function showPortal() {
+          if (settled) return;
+          settled = true;
+          spinner.hidden = true;
+        }
+
+        function showFallback() {
+          if (settled) return;
+          settled = true;
+          embedWrap.hidden = true;
+          fallback.hidden = false;
+        }
+
+        // Browsers don't expose a direct "blocked by X-Frame-Options/CSP"
+        // event for cross-origin iframes, so we use the standard fallback
+        // heuristic: start loading, and if `load` hasn't fired within a
+        // few seconds, assume the portal refused to be embedded.
+        var BLOCK_DETECT_TIMEOUT_MS = 6000;
+        var timer = setTimeout(showFallback, BLOCK_DETECT_TIMEOUT_MS);
+
+        iframe.addEventListener('load', function () {
+          clearTimeout(timer);
+          showPortal();
+        });
+        iframe.addEventListener('error', function () {
+          clearTimeout(timer);
+          showFallback();
+        });
+
+        iframe.src = parentPortalUrl;
+      })();
+    </script>
 
     <!-- What you can do -->
     <div class="section-block">
