@@ -45,6 +45,8 @@ app.use('/admin/api', requireAuth, requireRole('admin'), adminApiRouter);
 app.use((req, res) => {
   res.status(404).send('Not Found');
 });
+ 
+app.get("/",(req, res) => {res.render("index")});
 
 ensureDataFiles();
 seedAdminUser().then(() => {
