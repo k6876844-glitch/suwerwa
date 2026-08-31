@@ -10850,3 +10850,15 @@ footer {
   transform: perspective(500px) rotateY(10deg) scale(1.05);
   box-shadow: 0 10px 22px rgba(0,0,0,.45), inset 0 1px 2px rgba(255,255,255,.45);
 }
+
+/* Logo containers are links back to the home page: keep their original
+   look (no underline, inherited text colour) and show a pointer cursor. */
+a.logo-area,
+a.sticky-logo,
+a.footer-logo-flex,
+a.logo,
+header .logo a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

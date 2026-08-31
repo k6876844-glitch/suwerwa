@@ -68,10 +68,10 @@
 
 <!-- STICKY HEADER -->
 <div class="sticky-header" id="stickyHeader">
-  <div class="sticky-logo">
+  <a href="/" class="sticky-logo">
     <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
     <span>SFG SUWERWA</span>
-  </div>
+  </a>
   <ul class="nav-menu">
     <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
     <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_FULL, active: navActive === 'aboutUs' }) %>

@@ -17,6 +17,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
+.login-card > a {
+  display: block;
+  width: 56px;
+  margin: 0 auto;
+}
 .login-badge {
   width: 56px; height: 56px;
   object-fit: cover;

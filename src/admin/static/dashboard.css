@@ -59,7 +59,7 @@ input  { font-family:inherit; }
   display:flex; align-items:center; justify-content:space-between;
   flex-shrink:0;
 }
-.sb-logo { display:flex; align-items:center; gap:12px; }
+.sb-logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
 .sb-badge {
   width:42px; height:42px; border-radius:10px;
   object-fit:cover;

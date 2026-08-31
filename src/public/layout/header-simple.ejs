@@ -17,13 +17,13 @@
 
 <!-- HEADER -->
 <header>
-  <div class="logo-area">
+  <a href="/" class="logo-area">
     <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-badge">
     <div class="logo-text">
       <h1>St Francis Girls Suwerwa</h1>
       <p>SFGS &nbsp;&nbsp; Trans Nzoia County, Kenya</p>
     </div>
-  </div>
+  </a>
   <nav>
     <ul class="nav-menu" style="padding:0;margin:0">
       <li class="<%= navActive === 'home' ? 'active' : '' %>"><a href="/index.html">Home</a></li>
@@ -41,10 +41,10 @@
 </header>
 <!-- STICKY HEADER -->
 <div class="sticky-header" id="stickyHeader">
-  <div class="sticky-logo">
+  <a href="/" class="sticky-logo">
     <img src="/logo.png" alt="St Francis Girls Suwerwa logo" class="logo-placeholder">
     <span>SFG Suwerwa</span>
-  </div>
+  </a>
   <ul class="nav-menu">
     <li><a href="/index.html">Home</a></li>
     <%- include('../components/dropdown-menu', { label: 'About Us', items: nav.ABOUT_US_SIMPLE }) %>
